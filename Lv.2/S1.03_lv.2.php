@@ -1,0 +1,50 @@
+<?php
+declare(strict_types=1);
+
+//EJ.1
+
+$array1 = [5, 2.4, 1.2];
+$array2 = [2, 5, 2.3];
+
+function compararArrays(array $array1, array $array2): void{
+    $interseccion = array_intersect($array1, $array2);
+    print_r($interseccion);
+
+    $unionArrays = array_merge($array1, $array2);
+    print_r($unionArrays);
+}
+
+compararArrays($array1, $array2);
+
+//EJ.2
+
+function listarAlumnos(array $notasClase): void{
+    foreach($notasClase as $alumno => $notas){
+        echo $alumno .":". implode(',', $notas)."\n";
+    }
+}
+
+$notasClase = [
+    'Germán' => [3, 5, 4.5, 8, 5.5],
+    'Alex' => [4, 5.5, 8, 3, 4],
+    'Alexia' => [8, 9, 5.5, 7, 7.5],
+    'Ana' => [6, 7, 8, 5, 6]
+    ];
+
+listarAlumnos($notasClase);
+
+function calcularMedia($notasClase): float{
+    $totalNotas = [];
+    foreach($notasClase as $nota){
+        $totalNotas = array_merge($totalNotas, $nota);      
+    }
+    $mediaClase = array_sum($totalNotas) / count($totalNotas);
+    echo "La media de la clase es: ".$mediaClase."\n";
+    return $mediaClase;
+}
+
+calcularMedia($notasClase);
+
+
+
+?>
