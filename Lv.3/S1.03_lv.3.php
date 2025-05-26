@@ -39,7 +39,7 @@ $primos = array_reduce($n, function($acc, $v){
     return esPrimo($v) ? $acc + $v : $acc;
 }, 0);
 
-echo "La suma de los números primos es: $primos\n";
+echo "La suma de los números primos es: $primos\n" . PHP_EOL;
 
 
 

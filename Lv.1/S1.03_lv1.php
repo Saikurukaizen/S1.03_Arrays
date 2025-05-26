@@ -1,22 +1,19 @@
 <?php
 declare(strict_types=1);
 
-//EJ.1
 
 $numArray = [5,8,12,21,36];
 foreach($numArray as $n){
-    echo $n;
+    echo $n . PHP_EOL;
 }
 
-//EJ.2
 
 $x = array (10, 20, 30, 40, 50,60);
-echo count($x);
+echo count($x) . PHP_EOL;
 unset($x[0], $x[3]);
 $x = array_values($x);
 var_dump($x);
 
-//EJ.3
 
 function encontrarChars(array $palabras, string $char): bool{
     foreach($palabras as $palabra){
@@ -28,10 +25,9 @@ function encontrarChars(array $palabras, string $char): bool{
 }
 
 $palabras = ['hola', 'Php','Html'];
-var_dump(encontrarChars($palabras, "h"));
-var_dump(encontrarchars($palabras, "l"));
+var_dump(encontrarChars($palabras, "h")) . PHP_EOL;
+var_dump(encontrarChars($palabras, "l")) . PHP_EOL;
 
-//EJ.4
 
 function getInfo(): string{
     $miPersona = [
@@ -49,5 +45,5 @@ function getInfo(): string{
     ';
 }
 
-echo getInfo();
+echo getInfo() . PHP_EOL;
 ?>

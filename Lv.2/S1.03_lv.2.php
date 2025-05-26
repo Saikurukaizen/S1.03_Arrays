@@ -8,19 +8,19 @@ $array2 = [2, 5, 2.3];
 
 function compararArrays(array $array1, array $array2): void{
     $interseccion = array_intersect($array1, $array2);
-    print_r($interseccion);
+    print_r($interseccion) . PHP_EOL;
 
     $unionArrays = array_merge($array1, $array2);
-    print_r($unionArrays);
+    print_r($unionArrays) . PHP_EOL;
 }
 
-compararArrays($array1, $array2);
+compararArrays($array1, $array2) . PHP_EOL;
 
 //EJ.2
 
 function listarAlumnos(array $notasClase): void{
     foreach($notasClase as $alumno => $notas){
-        echo $alumno .":". implode(',', $notas)."\n";
+        echo $alumno .":". implode(',', $notas)."\n" . PHP_EOL;
     }
 }
 
@@ -39,11 +39,11 @@ function calcularMedia($notasClase): float{
         $totalNotas = array_merge($totalNotas, $nota);      
     }
     $mediaClase = array_sum($totalNotas) / count($totalNotas);
-    echo "La media de la clase es: ".$mediaClase."\n";
+    echo "La media de la clase es: ".$mediaClase."\n" . PHP_EOL;
     return $mediaClase;
 }
 
-calcularMedia($notasClase);
+calcularMedia($notasClase) . PHP_EOL;
 
 
 
