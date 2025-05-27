@@ -18,12 +18,6 @@ compararArrays($array1, $array2) . PHP_EOL;
 
 //EJ.2
 
-function listarAlumnos(array $notasClase): void{
-    foreach($notasClase as $alumno => $notas){
-        echo $alumno .":". implode(',', $notas)."\n" . PHP_EOL;
-    }
-}
-
 $notasClase = [
     'Germán' => [3, 5, 4.5, 8, 5.5],
     'Alex' => [4, 5.5, 8, 3, 4],
@@ -31,19 +25,26 @@ $notasClase = [
     'Ana' => [6, 7, 8, 5, 6]
     ];
 
-listarAlumnos($notasClase);
+function listarAlumnos(array $notasClase): void{
+    foreach($notasClase as $alumno => $notas){
+        echo $alumno .":". implode(',', $notas)."\n" . PHP_EOL;
+    }
+}
 
 function calcularMedia($notasClase): float{
     $totalNotas = [];
-    foreach($notasClase as $nota){
-        $totalNotas = array_merge($totalNotas, $nota);      
+    foreach($notasClase as $alumno => $notas){
+        $mediaAlumno = array_sum($notas) / count($notas);
+        echo "La media de $alumno es: $mediaAlumno\n" . PHP_EOL;
+        $totalNotas = array_merge($totalNotas, $notas);      
     }
     $mediaClase = array_sum($totalNotas) / count($totalNotas);
     echo "La media de la clase es: ".$mediaClase."\n" . PHP_EOL;
     return $mediaClase;
 }
 
-calcularMedia($notasClase) . PHP_EOL;
+listarAlumnos($notasClase);
+calcularMedia($notasClase);
 
 
 
